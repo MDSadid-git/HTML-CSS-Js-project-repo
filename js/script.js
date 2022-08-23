@@ -2,7 +2,7 @@
 const playerArray = [];
 function SelectButton(element) {
   if (playerArray.length > 4) {
-    alert("you cant not select aney plyer");
+    alert("you can't not select any player");
   } else {
     const mainPlyerName = element.parentNode.parentNode.children[0].innerText;
     playerArray.push(mainPlyerName);
@@ -45,7 +45,7 @@ document.getElementById("allTotal").addEventListener("click", function () {
   const playerExpenses = document.getElementById("playerExpenses");
   const perPlayerExpensesInt = parseInt(playerExpenses.innerText);
   if (perPlayerExpensesInt === 0) {
-    alert("Please give me plyer Epenses");
+    alert("Please give me player Epenses");
   } else {
     //Manager Money
     const manager = comunBudget("manager");
