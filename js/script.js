@@ -10,7 +10,10 @@ function SelectButton(element) {
     const makeLi = document.createElement("li");
     const mainUlID = document.getElementById("mainUl");
     makeLi.innerText = mainPlyerName;
-    makeLi.setAttribute("class", "block text-2xl text-white pl-3");
+    makeLi.setAttribute(
+      "class",
+      "block text-2xl text-white pl-3 border-b-2 border-indigo-500 mb-2 w-6/12 m-auto"
+    );
     mainUlID.appendChild(makeLi);
     if (true) {
       element.setAttribute("disabled", true);
@@ -30,3 +33,28 @@ function comunBudget(element) {
   mainId.value = "";
   return mianInt;
 }
+document.getElementById("seletedPlayer").addEventListener("click", function () {
+  const perPlayer = document.getElementById("perPlayer");
+  const perPlayerInt = parseInt(perPlayer.value);
+  const playerExpenses = document.getElementById("playerExpenses");
+  playerExpenses.innerText = perPlayerInt * playerArray.length;
+  perPlayer.value = "";
+});
+document.getElementById("allTotal").addEventListener("click", function () {
+  //player Expenses
+  const playerExpenses = document.getElementById("playerExpenses");
+  const perPlayerExpensesInt = parseInt(playerExpenses.innerText);
+  if (perPlayerExpensesInt === 0) {
+    alert("Please give me plyer Epenses");
+  } else {
+    //Manager Money
+    const manager = comunBudget("manager");
+    //coach Money
+    const coach = comunBudget("coach");
+
+    //   all Total Expenses
+    const totalExpenses = document.getElementById("totalExpenses");
+    totalExpenses.innerText = perPlayerExpensesInt + manager + coach;
+  }
+});
+//Budget Area end
