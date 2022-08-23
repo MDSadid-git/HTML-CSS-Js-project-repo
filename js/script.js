@@ -37,15 +37,21 @@ document.getElementById("seletedPlayer").addEventListener("click", function () {
   const perPlayer = document.getElementById("perPlayer");
   const perPlayerInt = parseInt(perPlayer.value);
   const playerExpenses = document.getElementById("playerExpenses");
-  playerExpenses.innerText = perPlayerInt * playerArray.length;
-  perPlayer.value = "";
+
+  //number type valation
+  if (isNaN(perPlayerInt)) {
+    alert("please Give me amount");
+  } else {
+    playerExpenses.innerText = perPlayerInt * playerArray.length;
+    perPlayer.value = "";
+  }
 });
 document.getElementById("allTotal").addEventListener("click", function () {
   //player Expenses
   const playerExpenses = document.getElementById("playerExpenses");
   const perPlayerExpensesInt = parseInt(playerExpenses.innerText);
   if (perPlayerExpensesInt === 0) {
-    alert("Please give me player Epenses");
+    alert("Please give me player Epenses Amount");
   } else {
     //Manager Money
     const manager = comunBudget("manager");
