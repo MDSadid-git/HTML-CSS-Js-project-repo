@@ -22,3 +22,11 @@ function SelectButton(element) {
   }
 }
 //Selected-player end
+
+//Budget Area start
+function comunBudget(element) {
+  const mainId = document.getElementById(element);
+  const mianInt = parseInt(mainId.value);
+  mainId.value = "";
+  return mianInt;
+}
