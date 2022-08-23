@@ -12,7 +12,7 @@ function SelectButton(element) {
     makeLi.innerText = mainPlyerName;
     makeLi.setAttribute(
       "class",
-      "block text-2xl text-white pl-3 border-b-2 border-indigo-500 mb-2 w-6/12 m-auto"
+      "block text-2xl text-white pl-3 border-b-2 border-indigo-500 mb-2 w-6/12 m-auto text-center"
     );
     mainUlID.appendChild(makeLi);
     if (true) {
