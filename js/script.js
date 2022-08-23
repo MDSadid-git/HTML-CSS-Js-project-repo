@@ -48,8 +48,17 @@ document.getElementById("seletedPlayer").addEventListener("click", function () {
 });
 document.getElementById("allTotal").addEventListener("click", function () {
   //player Expenses
+
+  // all define area
+  const totalExpenses = document.getElementById("totalExpenses");
+  const managerValue = document.getElementById("manager");
+  const managerInt = parseInt(managerValue.value);
+  const coachValue = document.getElementById("coach");
+  const coachInt = parseInt(coachValue.value);
   const playerExpenses = document.getElementById("playerExpenses");
   const perPlayerExpensesInt = parseInt(playerExpenses.innerText);
+  // all define area end
+
   if (perPlayerExpensesInt === 0) {
     alert("Please give me player Epenses Amount");
   } else {
@@ -59,8 +68,11 @@ document.getElementById("allTotal").addEventListener("click", function () {
     const coach = comunBudget("coach");
 
     //   all Total Expenses
-    const totalExpenses = document.getElementById("totalExpenses");
-    totalExpenses.innerText = perPlayerExpensesInt + manager + coach;
+    if (isNaN(managerInt) || isNaN(coachInt)) {
+      alert("please Give me amount");
+    } else {
+      totalExpenses.innerText = perPlayerExpensesInt + manager + coach;
+    }
   }
 });
 //Budget Area end
